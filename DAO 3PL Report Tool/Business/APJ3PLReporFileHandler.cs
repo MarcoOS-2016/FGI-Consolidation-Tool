@@ -1354,10 +1354,16 @@ namespace DAO_3PL_Report_Tool
                     if (partNumber.Equals(this.APJSnPPartListDataTable.Rows[indey]["PartNumber"]))
                     {
                         this.ConsolidationAgingDataTable.Rows[index]["Category"] = this.APJSnPPartListDataTable.Rows[indey]["Category"];
-                        this.ConsolidationAgingDataTable.Rows[index]["Unit Cost"] = this.APJSnPPartListDataTable.Rows[indey]["UnitCost"];
+
+                        if (this.APJSnPPartListDataTable.Rows[indey]["UnitCost"].ToString().Length != 0)
+                            this.ConsolidationAgingDataTable.Rows[index]["Unit Cost"] = this.APJSnPPartListDataTable.Rows[indey]["UnitCost"];
+                        else
+                            this.ConsolidationAgingDataTable.Rows[index]["Unit Cost"] = 0;
+
                         this.ConsolidationAgingDataTable.Rows[index]["Total Cost"] =
                             Convert.ToInt32(this.ConsolidationAgingDataTable.Rows[index]["Qty"]) *
                             Convert.ToDouble(this.ConsolidationAgingDataTable.Rows[index]["Unit Cost"]);
+
                         break;
                     }
                 }
