@@ -123,7 +123,7 @@ namespace DAO_3PL_Report_Tool
 
         public DataTable ReadAPJSnPPartFilePartList(string sheetname)
         {
-            return ReadExcelFile(sheetname, "SiteName, PartNumber, Category").Tables[0];
+            return ReadExcelFile(sheetname, "SiteName, PartNumber, Category, UnitCost").Tables[0];
         }
 
         public DataTable ReadAPJSnPPartFileSiteNameList(string sheetname)

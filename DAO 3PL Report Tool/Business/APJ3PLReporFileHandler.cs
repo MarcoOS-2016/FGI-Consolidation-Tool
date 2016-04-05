@@ -397,6 +397,16 @@ namespace DAO_3PL_Report_Tool
             dc.DataType = System.Type.GetType("System.Int32");
             ConsolidationAgingDataTable.Columns.Add(dc);
 
+            dc = new DataColumn();
+            dc.ColumnName = "Unit Cost";
+            dc.DataType = System.Type.GetType("System.Double");
+            ConsolidationAgingDataTable.Columns.Add(dc);
+
+            dc = new DataColumn();
+            dc.ColumnName = "Total Cost";
+            dc.DataType = System.Type.GetType("System.Double");
+            ConsolidationAgingDataTable.Columns.Add(dc);
+
             /*
             dc = new DataColumn();
             dc.ColumnName = "<= 15 Days";
@@ -1344,6 +1354,10 @@ namespace DAO_3PL_Report_Tool
                     if (partNumber.Equals(this.APJSnPPartListDataTable.Rows[indey]["PartNumber"]))
                     {
                         this.ConsolidationAgingDataTable.Rows[index]["Category"] = this.APJSnPPartListDataTable.Rows[indey]["Category"];
+                        this.ConsolidationAgingDataTable.Rows[index]["Unit Cost"] = this.APJSnPPartListDataTable.Rows[indey]["UnitCost"];
+                        this.ConsolidationAgingDataTable.Rows[index]["Total Cost"] =
+                            Convert.ToInt32(this.ConsolidationAgingDataTable.Rows[index]["Qty"]) *
+                            Convert.ToDouble(this.ConsolidationAgingDataTable.Rows[index]["Unit Cost"]);
                         break;
                     }
                 }
