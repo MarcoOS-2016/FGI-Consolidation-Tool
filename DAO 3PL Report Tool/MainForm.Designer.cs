@@ -666,7 +666,7 @@
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FGI Consolidation Tool(Ver.03142016)";
+            this.Text = "FGI Consolidation Tool(Ver.04112016)";
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
             this.tabControl1.ResumeLayout(false);

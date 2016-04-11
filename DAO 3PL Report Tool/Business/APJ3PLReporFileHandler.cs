@@ -388,6 +388,11 @@ namespace DAO_3PL_Report_Tool
             ConsolidationAgingDataTable.Columns.Add(dc);
 
             dc = new DataColumn();
+            dc.ColumnName = "Description";
+            dc.DataType = System.Type.GetType("System.String");
+            ConsolidationAgingDataTable.Columns.Add(dc);
+
+            dc = new DataColumn();
             dc.ColumnName = "Category";
             dc.DataType = System.Type.GetType("System.String");
             ConsolidationAgingDataTable.Columns.Add(dc);
@@ -1354,6 +1359,7 @@ namespace DAO_3PL_Report_Tool
                     if (partNumber.Equals(this.APJSnPPartListDataTable.Rows[indey]["PartNumber"]))
                     {
                         this.ConsolidationAgingDataTable.Rows[index]["Category"] = this.APJSnPPartListDataTable.Rows[indey]["Category"];
+                        this.ConsolidationAgingDataTable.Rows[index]["Description"] = this.APJSnPPartListDataTable.Rows[indey]["Description"];
 
                         if (this.APJSnPPartListDataTable.Rows[indey]["UnitCost"].ToString().Length != 0)
                             this.ConsolidationAgingDataTable.Rows[index]["Unit Cost"] = this.APJSnPPartListDataTable.Rows[indey]["UnitCost"];
